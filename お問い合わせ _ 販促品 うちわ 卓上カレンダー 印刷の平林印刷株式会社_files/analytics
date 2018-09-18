@@ -1,0 +1,27 @@
+function piResponse() {
+piSetCookie('visitor_id539972', '134708595', 3650);
+piSetCookie('visitor_id539972-hash', 'ea008c99ce6b704d4e96b1a3c95cf15d4c93a19da0b5af59a31e712c337098bf383068c28a69423056b34b61e179391efbe5dfcd', 3650);
+
+if (document.location.protocol != "https:" || (document.location.protocol == "https:" && true)) {
+var analytics_link = document.location.protocol + "//" + "info.hira-print.jp/analytics?";
+pi.tracker.visitor_id='134708595';
+
+pi.tracker.visitor_id_sign='ea008c99ce6b704d4e96b1a3c95cf15d4c93a19da0b5af59a31e712c337098bf383068c28a69423056b34b61e179391efbe5dfcd';
+
+var variables = 'conly=true';
+for (property in pi.tracker) {
+	variables += "&"+property+"="+pi.tracker[property];
+}
+var headID = document.getElementsByTagName("head")[0];
+piScriptObj[piScriptNum] = document.createElement('script');
+piScriptObj[piScriptNum].type = 'text/javascript';
+piScriptObj[piScriptNum].src = analytics_link + variables;
+headID.appendChild(piScriptObj[piScriptNum]);
+piScriptObj[piScriptNum].onload = function() { return; }
+}
+}
+piResponse();
+
+
+
+
